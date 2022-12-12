@@ -12,6 +12,7 @@ public class Main {
         people.add(new Person("Nikolay", "Petrov-Zadunaiskiy", 45));
         people.add(new Person("Yan", "Ivanov", 30));
         people.add(new Person("Val", "Nosov-Perviy", 15));
+        people.add(new Person("Ilona", "Solov'eva", 17));
         System.out.println(people);
         Collections.sort(people, new PersonComparator(max));
         System.out.println(people);
