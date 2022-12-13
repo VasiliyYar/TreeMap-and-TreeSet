@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.function.Predicate;
 
 public class Main {
     public static void main (String[] args){
@@ -15,9 +13,15 @@ public class Main {
         people.add(new Person("Yan", "Ivanov", 30));
         people.add(new Person("Val", "Nosov-Perviy", 15));
         people.add(new Person("Ilona", "Solov'eva", 17));
+        System.out.println();
         System.out.println(people);
+        System.out.println();
         Collections.sort(people, new PersonComparator(max));
         System.out.println(people);
+        System.out.println();
+        people.removeIf(s -> s.getAge() < 18);
+        people.forEach(s -> System.out.print(s + " "));
+        System.out.println();
 
 
     }
