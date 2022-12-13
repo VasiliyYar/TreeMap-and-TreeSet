@@ -14,14 +14,8 @@ public class PersonComparator implements Comparator<Person> {
         if (words1 != words2) {
             if (words1 < maxWords || words2 < maxWords) {
                 return Integer.compare(words1, words2);
-            } else if (words1 >= maxWords && words2 >= maxWords) {
-                return Integer.compare(o1.getAge(), o2.getAge());
             } else {
-                if (words1 < maxWords || words2 < maxWords) {
-                    return Integer.compare(words1, words2);
-                } else if (words1 >= maxWords && words2 >= maxWords) {
-                    return Integer.compare(o1.getAge(), o2.getAge());
-                }
+                return Integer.compare(o1.getAge(), o2.getAge());
             }
         }
         return Integer.compare(o1.getAge(), o2.getAge());
