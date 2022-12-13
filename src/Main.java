@@ -2,10 +2,10 @@ import java.util.*;
 import java.util.Comparator;
 
 public class Main {
-    public static void main (String[] args){
+    public static void main(String[] args) {
         List<Person> people = new ArrayList<>();
 
-        int maxWords=3;
+        int maxWords = 3;
         //PersonComparator personComparator = new PersonComparator(max);
         Comparator<Person> personComparator = (o1, o2) -> {
             int words1 = o1.getSurname().split("-").length;
@@ -13,18 +13,11 @@ public class Main {
             if (words1 != words2) {
                 if (words1 < maxWords || words2 < maxWords) {
                     return Integer.compare(words1, words2);
-                } else if (words1 >= maxWords && words2 >= maxWords) {
-                    return Integer.compare(o1.getAge(), o2.getAge());
                 } else {
-                    if (words1 < maxWords || words2 < maxWords) {
-                        return Integer.compare(words1, words2);
-                    } else if (words1 >= maxWords && words2 >= maxWords) {
-                        return Integer.compare(o1.getAge(), o2.getAge());
-                    }
+                    return Integer.compare(o1.getAge(), o2.getAge());
                 }
             }
             return Integer.compare(o1.getAge(), o2.getAge());
-
         };
 
 
